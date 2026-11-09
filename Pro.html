@@ -902,25 +902,29 @@
     <!-- Interactive Canvas Layer for Sparks & Matrix Ambient Particles -->
     <canvas id="particle-canvas"></canvas>
 
-    <header>
-        <div class="logo-wrap">
-            <div class="logo">⚡ TYPING MASTER PRO</div>
-            <span class="level-pill" id="player-xp-badge">LVL 1 • 0 XP</span>
-        </div>
-        <div class="header-actions">
-            <select class="theme-select" id="theme-select" title="Change Theme">
-                <option value="cyber">🌌 Cyber Neon</option>
-                <option value="matrix">💻 Matrix Rain</option>
-                <option value="synthwave">🌆 Synthwave</option>
-                <option value="frost">❄️ Frost Slate</option>
-            </select>
-            <nav class="nav-tabs">
-                <button class="nav-tab active" data-target="practice-view">Practice</button>
-                <button class="nav-tab" data-target="tasks-view">Campaign</button>
-                <button class="nav-tab" data-target="stats-view">Analytics</button>
-            </nav>
-        </div>
-    </header>
+    <!-- Inside your pro.html header -->
+<header>
+    <div class="logo-wrap">
+        <div class="logo">⚡ TYPING MASTER PRO</div>
+        <span class="level-pill" id="player-xp-badge">LVL 1 • 0 XP</span>
+    </div>
+    <div class="header-actions">
+        <!-- Navigation Link back to index.html -->
+        <a href="index.html" class="site-nav-link" style="color: var(--text-muted); text-decoration: none; font-size: 0.8rem; font-weight: 700; padding: 0.4rem 0.8rem; border-radius: 9999px; border: 1px solid var(--border-color); background: var(--bg-primary);">🏠 Home</a>
+        
+        <select class="theme-select" id="theme-select" title="Change Theme">
+            <option value="cyber">🌌 Cyber Neon</option>
+            <option value="matrix">💻 Matrix Rain</option>
+            <option value="synthwave">🌆 Synthwave</option>
+            <option value="frost">❄️ Frost Slate</option>
+        </select>
+        <nav class="nav-tabs">
+            <button class="nav-tab active" data-target="practice-view">Practice</button>
+            <button class="nav-tab" data-target="tasks-view">Campaign</button>
+            <button class="nav-tab" data-target="stats-view">Analytics</button>
+        </nav>
+    </div>
+</header>
 
     <main>
         <!-- PRACTICE VIEW -->
