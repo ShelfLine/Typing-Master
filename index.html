@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Typing Practice Master — Home</title>
+    <title>Typing Practice Master — Mobile Optimized</title>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -37,7 +37,7 @@
             display: flex;
             flex-direction: column;
             overflow-x: hidden;
-            padding-top: 65px; /* Prevent overlap with fixed header */
+            padding-top: 60px; /* Space for fixed header */
         }
 
         /* Fixed Site Navigation Header */
@@ -46,97 +46,68 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: 65px;
-            background: rgba(24, 27, 40, 0.9);
+            height: 60px;
+            background: rgba(24, 27, 40, 0.95);
             backdrop-filter: blur(10px);
             border-bottom: 1px solid var(--border-color);
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0 1.25rem;
+            padding: 0 1rem;
             z-index: 1000;
         }
 
         .logo {
-            font-size: 1.1rem;
+            font-size: 1rem;
             font-weight: 800;
             background: linear-gradient(135deg, #6366f1, #a855f7, #ec4899);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            display: flex;
-            align-items: center;
-            gap: 0.4rem;
+            white-space: nowrap;
         }
 
         .site-nav {
             display: flex;
-            gap: 0.5rem;
+            gap: 0.35rem;
+            align-items: center;
         }
 
         .site-nav-link {
             color: var(--text-muted);
             text-decoration: none;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             font-weight: 600;
-            padding: 0.4rem 0.8rem;
+            padding: 0.35rem 0.65rem;
             border-radius: 9999px;
             border: 1px solid var(--border-color);
             background: var(--bg-primary);
             transition: all 0.2s ease;
+            white-space: nowrap;
         }
 
-        .site-nav-link:hover, .site-nav-link.active {
+        .site-nav-link.active {
             color: white;
             background: var(--accent-primary);
             border-color: var(--accent-primary);
-            box-shadow: 0 0 12px var(--accent-glow);
-        }
-
-        /* Internal App Sub-Tabs */
-        .nav-tabs {
-            display: flex;
-            gap: 0.25rem;
-            background: var(--bg-primary);
-            padding: 0.2rem;
-            border-radius: 9999px;
-            border: 1px solid var(--border-color);
-        }
-
-        .nav-tab {
-            background: transparent;
-            border: none;
-            color: var(--text-muted);
-            padding: 0.4rem 0.8rem;
-            font-family: var(--font-main);
-            font-weight: 600;
-            font-size: 0.8rem;
-            border-radius: 9999px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-
-        .nav-tab.active {
-            background: var(--accent-primary);
-            color: white;
-            box-shadow: 0 0 12px var(--accent-glow);
+            box-shadow: 0 0 10px var(--accent-glow);
         }
 
         main {
             flex: 1;
-            max-width: 900px;
+            max-width: 850px;
             width: 100%;
             margin: 0 auto;
-            padding: 1rem;
+            padding: 0.75rem;
             display: flex;
             flex-direction: column;
-            gap: 1rem;
+            gap: 0.75rem;
         }
 
         .view-section {
             display: none;
             flex-direction: column;
-            gap: 1rem;
-            animation: fadeIn 0.3s ease;
+            gap: 0.75rem;
+            animation: fadeIn 0.2s ease;
         }
 
         .view-section.active {
@@ -148,31 +119,31 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* HUD & Metrics */
+        /* Responsive Mobile HUD */
         .hud-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 0.75rem;
+            gap: 0.5rem;
         }
 
         .metric-card {
             background: var(--bg-secondary);
             border: 1px solid var(--border-color);
-            border-radius: 0.875rem;
-            padding: 0.75rem;
+            border-radius: 0.75rem;
+            padding: 0.5rem;
             text-align: center;
         }
 
         .metric-label {
-            font-size: 0.7rem;
+            font-size: 0.65rem;
             color: var(--text-muted);
             text-transform: uppercase;
             letter-spacing: 0.05em;
-            margin-bottom: 0.2rem;
+            margin-bottom: 0.1rem;
         }
 
         .metric-value {
-            font-size: 1.25rem;
+            font-size: 1.1rem;
             font-weight: 700;
             font-family: var(--font-code);
             color: var(--text-main);
@@ -182,13 +153,13 @@
         .practice-container {
             background: var(--bg-secondary);
             border: 1px solid var(--border-color);
-            border-radius: 1rem;
-            padding: 1.25rem;
+            border-radius: 0.875rem;
+            padding: 1rem;
             position: relative;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
             display: flex;
             flex-direction: column;
-            gap: 1rem;
+            gap: 0.75rem;
         }
 
         .controls-bar {
@@ -196,12 +167,12 @@
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
-            gap: 0.75rem;
+            gap: 0.5rem;
         }
 
         .mode-selects {
             display: flex;
-            gap: 0.4rem;
+            gap: 0.35rem;
             flex-wrap: wrap;
         }
 
@@ -209,9 +180,9 @@
             background: var(--bg-card);
             border: 1px solid var(--border-color);
             color: var(--text-muted);
-            padding: 0.35rem 0.7rem;
-            border-radius: 0.5rem;
-            font-size: 0.75rem;
+            padding: 0.3rem 0.6rem;
+            border-radius: 0.4rem;
+            font-size: 0.7rem;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.2s;
@@ -227,10 +198,10 @@
             background: var(--accent-primary);
             color: white;
             border: none;
-            padding: 0.45rem 0.9rem;
-            border-radius: 0.5rem;
+            padding: 0.35rem 0.75rem;
+            border-radius: 0.4rem;
             font-weight: 600;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             cursor: pointer;
             transition: all 0.2s;
             display: inline-flex;
@@ -248,18 +219,18 @@
             color: var(--text-main);
         }
 
-        /* Text Display Box */
+        /* Mobile Text Box with Zero-Zoom Font */
         .text-display {
             font-family: var(--font-code);
-            font-size: 1.15rem;
-            line-height: 1.8rem;
+            font-size: 1rem;
+            line-height: 1.6rem;
             letter-spacing: 0.02em;
             background: var(--bg-primary);
             border: 2px solid var(--border-color);
-            border-radius: 0.75rem;
-            padding: 1.25rem;
-            min-height: 130px;
-            max-height: 200px;
+            border-radius: 0.6rem;
+            padding: 1rem;
+            min-height: 110px;
+            max-height: 180px;
             overflow-y: auto;
             position: relative;
             word-break: break-word;
@@ -293,29 +264,25 @@
             pointer-events: none;
             top: 0;
             left: 0;
+            font-size: 16px; /* Prevents iOS auto-zoom */
         }
 
         /* Tasks Campaign Grid */
         .task-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-            gap: 1rem;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 0.75rem;
         }
 
         .task-card {
             background: var(--bg-secondary);
             border: 1px solid var(--border-color);
-            border-radius: 0.875rem;
-            padding: 1.25rem;
+            border-radius: 0.75rem;
+            padding: 1rem;
             display: flex;
             flex-direction: column;
-            gap: 0.75rem;
+            gap: 0.5rem;
             transition: transform 0.2s, border-color 0.2s;
-        }
-
-        .task-card:hover {
-            transform: translateY(-2px);
-            border-color: var(--accent-primary);
         }
 
         .task-header {
@@ -325,13 +292,13 @@
         }
 
         .task-title {
-            font-size: 1rem;
+            font-size: 0.9rem;
             font-weight: 700;
         }
 
         .task-badge {
-            font-size: 0.65rem;
-            padding: 0.2rem 0.45rem;
+            font-size: 0.6rem;
+            padding: 0.15rem 0.4rem;
             border-radius: 9999px;
             font-weight: 600;
             background: var(--bg-card);
@@ -345,9 +312,9 @@
         }
 
         .task-desc {
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             color: var(--text-muted);
-            line-height: 1.35;
+            line-height: 1.3;
         }
 
         .task-footer {
@@ -355,33 +322,33 @@
             justify-content: space-between;
             align-items: center;
             margin-top: auto;
-            padding-top: 0.6rem;
+            padding-top: 0.5rem;
             border-top: 1px solid var(--border-color);
-            font-size: 0.75rem;
+            font-size: 0.7rem;
         }
 
         /* Stats & History View */
         .stats-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-            gap: 0.75rem;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.5rem;
         }
 
         .stat-box {
             background: var(--bg-secondary);
             border: 1px solid var(--border-color);
-            border-radius: 0.875rem;
-            padding: 1rem;
+            border-radius: 0.75rem;
+            padding: 0.75rem;
             display: flex;
             flex-direction: column;
-            gap: 0.4rem;
+            gap: 0.3rem;
         }
 
         .history-table-container {
             background: var(--bg-secondary);
             border: 1px solid var(--border-color);
-            border-radius: 0.875rem;
-            padding: 1.25rem;
+            border-radius: 0.75rem;
+            padding: 1rem;
             overflow-x: auto;
         }
 
@@ -389,11 +356,11 @@
             width: 100%;
             border-collapse: collapse;
             text-align: left;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
         }
 
         th, td {
-            padding: 0.6rem 0.75rem;
+            padding: 0.5rem 0.6rem;
             border-bottom: 1px solid var(--border-color);
         }
 
@@ -406,7 +373,7 @@
         .modal-overlay {
             position: fixed;
             inset: 0;
-            background: rgba(15, 17, 26, 0.8);
+            background: rgba(15, 17, 26, 0.85);
             backdrop-filter: blur(4px);
             display: none;
             justify-content: center;
@@ -423,41 +390,48 @@
             background: var(--bg-secondary);
             border: 1px solid var(--border-color);
             border-radius: 1rem;
-            padding: 1.5rem;
-            max-width: 400px;
+            padding: 1.25rem;
+            max-width: 380px;
             width: 100%;
             text-align: center;
             display: flex;
             flex-direction: column;
-            gap: 1rem;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+            gap: 0.875rem;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
         }
 
         .modal-title {
-            font-size: 1.35rem;
+            font-size: 1.2rem;
             font-weight: 800;
         }
 
         .modal-stats {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 0.75rem;
+            gap: 0.5rem;
             background: var(--bg-primary);
-            padding: 0.875rem;
-            border-radius: 0.6rem;
+            padding: 0.75rem;
+            border-radius: 0.5rem;
             border: 1px solid var(--border-color);
         }
 
-        @media(max-width: 600px) {
+        /* Mobile Breakpoint Adjustments */
+        @media(max-width: 550px) {
             .hud-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
-            .site-header {
-                padding: 0 0.75rem;
+            .stats-grid {
+                grid-template-columns: repeat(1, 1fr);
             }
-            .text-display {
-                font-size: 1rem;
-                padding: 1rem;
+            .site-header {
+                padding: 0 0.5rem;
+            }
+            .logo {
+                font-size: 0.85rem;
+            }
+            .site-nav-link {
+                padding: 0.3rem 0.5rem;
+                font-size: 0.7rem;
             }
         }
     </style>
@@ -466,17 +440,15 @@
 
     <!-- Fixed Global Navigation Header -->
     <header class="site-header">
-        <div class="logo">⚡ Typing Master Pro</div>
-        <div style="display: flex; align-items: center; gap: 0.75rem;">
-            <nav class="site-nav">
-                <a href="index.html" class="site-nav-link active">Home</a>
-                <a href="pro.html" class="site-nav-link">Cyber Pro Edition 🚀</a>
-            </nav>
-            <nav class="nav-tabs">
-                <button class="nav-tab active" data-target="practice-view">Practice</button>
-                <button class="nav-tab" data-target="tasks-view">Tasks</button>
-                <button class="nav-tab" data-target="stats-view">Stats</button>
-            </nav>
+        <div class="logo">⚡ Typing Master</div>
+        <div class="site-nav">
+            <a href="index.html" class="site-nav-link active">Home</a>
+            <a href="pro.html" class="site-nav-link">Pro 🚀</a>
+            <div style="display: flex; gap: 0.2rem; margin-left: 0.25rem;">
+                <button class="nav-tab active" data-target="practice-view" style="font-size: 0.7rem; padding: 0.3rem 0.5rem;">Practice</button>
+                <button class="nav-tab" data-target="tasks-view" style="font-size: 0.7rem; padding: 0.3rem 0.5rem;">Tasks</button>
+                <button class="nav-tab" data-target="stats-view" style="font-size: 0.7rem; padding: 0.3rem 0.5rem;">Stats</button>
+            </div>
         </div>
     </header>
 
@@ -509,9 +481,9 @@
                         <button class="chip" data-category="code">JavaScript</button>
                         <button class="chip" data-category="symbols">Symbols</button>
                     </div>
-                    <div style="display: flex; gap: 0.4rem;">
+                    <div style="display: flex; gap: 0.35rem;">
                         <button class="btn btn-secondary" id="sound-toggle-btn" title="Toggle Sound">🔊 Sound</button>
-                        <button class="btn" id="restart-btn">🔄 Restart</button>
+                        <button class="btn" id="restart-btn">🔄 Reset</button>
                     </div>
                 </div>
 
@@ -525,8 +497,8 @@
         <!-- TASKS / LEVEL VIEW -->
         <section id="tasks-view" class="view-section">
             <div style="display: flex; justify-content: space-between; align-items: center;">
-                <h2>Campaign Levels & Boss Battles</h2>
-                <span style="font-size: 0.75rem; color: var(--text-muted);">Conquer all trials</span>
+                <h2>Campaign Levels</h2>
+                <span style="font-size: 0.7rem; color: var(--text-muted);">Conquer all trials</span>
             </div>
             <div class="task-grid" id="task-grid">
                 <!-- Rendered dynamically -->
@@ -542,7 +514,7 @@
                     <div class="metric-value" id="stat-best-wpm">0</div>
                 </div>
                 <div class="stat-box">
-                    <div class="metric-label">Average Accuracy</div>
+                    <div class="metric-label">Avg Accuracy</div>
                     <div class="metric-value" id="stat-avg-acc">0%</div>
                 </div>
                 <div class="stat-box">
@@ -552,22 +524,22 @@
             </div>
 
             <div class="history-table-container">
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.6rem;">
                     <h3>Recent Sessions</h3>
-                    <button class="btn btn-secondary" id="clear-history-btn" style="font-size: 0.7rem;">Clear History</button>
+                    <button class="btn btn-secondary" id="clear-history-btn" style="font-size: 0.65rem;">Clear</button>
                 </div>
                 <table>
                     <thead>
                         <tr>
                             <th>Mode / Level</th>
                             <th>WPM</th>
-                            <th>Accuracy</th>
-                            <th>Errors</th>
+                            <th>Acc</th>
+                            <th>Err</th>
                             <th>Date</th>
                         </tr>
                     </thead>
                     <tbody id="history-tbody">
-                        <tr><td colspan="5" style="text-align: center; color: var(--text-muted);">No practice sessions recorded yet.</td></tr>
+                        <tr><td colspan="5" style="text-align: center; color: var(--text-muted);">No records found.</td></tr>
                     </tbody>
                 </table>
             </div>
@@ -588,7 +560,7 @@
                     <div class="metric-value" id="modal-acc">0%</div>
                 </div>
             </div>
-            <p id="modal-message" style="font-size: 0.85rem; color: var(--text-muted);">Great rhythm! Keep pushing your speed limits.</p>
+            <p id="modal-message" style="font-size: 0.8rem; color: var(--text-muted);">Great rhythm! Keep pushing your speed limits.</p>
             <button class="btn" id="modal-next-btn" style="width: 100%; justify-content: center;">Continue Practice</button>
         </div>
     </div>
@@ -751,7 +723,6 @@
 
         keyboardInput.addEventListener('input', (e) => {
             if (isFinished) return;
-
             const typedVal = keyboardInput.value;
             if (!typedVal) return;
 
@@ -791,7 +762,6 @@
                     finishTest();
                 }
             }
-
             updateLiveMetrics();
         });
 
@@ -854,7 +824,7 @@
             playTone(800, 'triangle', 0.25);
 
             saveSession({
-                mode: activeTaskId ? `Level ${activeTaskId}: ${task.title}` : currentCategory.toUpperCase(),
+                mode: activeTaskId ? `Lv ${activeTaskId}` : currentCategory.toUpperCase(),
                 wpm,
                 accuracy,
                 errors,
@@ -870,7 +840,7 @@
                     modalMessage.textContent = `Target reached! Level ${activeTaskId + 1} unlocked.`;
                 } else {
                     modalTitleText.textContent = "⚠️ Target Not Met";
-                    modalMessage.textContent = `Required: ${task.targetWpm} WPM & 80% Acc. You got ${wpm} WPM. Try again!`;
+                    modalMessage.textContent = `Required: ${task.targetWpm} WPM. You got ${wpm} WPM. Try again!`;
                 }
             } else {
                 modalTitleText.textContent = "🎉 Test Complete!";
@@ -895,7 +865,7 @@
         function saveSession(session) {
             let history = JSON.parse(localStorage.getItem('typing_history') || '[]');
             history.unshift(session);
-            if (history.length > 30) history.pop();
+            if (history.length > 20) history.pop();
             localStorage.setItem('typing_history', JSON.stringify(history));
         }
 
@@ -918,14 +888,14 @@
 
             const tbody = document.getElementById('history-tbody');
             if (totalTests === 0) {
-                tbody.innerHTML = `<tr><td colspan="5" style="text-align: center; color: var(--text-muted);">No practice sessions recorded yet.</td></tr>`;
+                tbody.innerHTML = `<tr><td colspan="5" style="text-align: center; color: var(--text-muted);">No records found.</td></tr>`;
                 return;
             }
 
             tbody.innerHTML = history.map(h => `
                 <tr>
                     <td><strong>${h.mode}</strong></td>
-                    <td>${h.wpm} WPM</td>
+                    <td>${h.wpm}</td>
                     <td>${h.accuracy}%</td>
                     <td>${h.errors}</td>
                     <td style="color: var(--text-muted);">${h.date}</td>
@@ -950,13 +920,13 @@
                         <div class="task-header">
                             <div class="task-title">Lv. ${t.id}: ${t.title}</div>
                             <span class="task-badge ${t.completed ? 'completed' : ''}" style="${badgeStyle}">
-                                ${t.completed ? 'Completed' : (t.unlocked ? 'Unlocked' : 'Locked')}
+                                ${t.completed ? 'Done' : (t.unlocked ? 'Open' : 'Lock')}
                             </span>
                         </div>
                         <div class="task-desc">${t.desc}</div>
                         <div class="task-footer">
                             <span>Target: <strong>${t.targetWpm} WPM</strong></span>
-                            ${t.unlocked ? `<button class="btn" onclick="startTask(${t.id})" style="padding: 0.3rem 0.6rem; font-size: 0.75rem;">${t.type === 'boss' ? 'Fight Boss' : (t.type === 'sprint' ? 'Start Sprint' : 'Play Level')}</button>` : `<span style="color: var(--text-muted); font-size: 0.75rem;">🔒 Locked</span>`}
+                            ${t.unlocked ? `<button class="btn" onclick="startTask(${t.id})" style="padding: 0.25rem 0.5rem; font-size: 0.7rem;">Play</button>` : `<span style="color: var(--text-muted); font-size: 0.7rem;">🔒</span>`}
                         </div>
                     </div>
                 `;
